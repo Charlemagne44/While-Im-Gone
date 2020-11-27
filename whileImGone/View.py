@@ -5,17 +5,19 @@ import winsound
 class View:
 
 	def intro_to_game():
-		intro1 = open(r"C:\Users\Owner\source\repos\whileImGone\whileImGone\Resources\Text\introPt1.txt")
-		intro2 = open(r"C:\Users\Owner\source\repos\whileImGone\whileImGone\Resources\Text\introPt2.txt")
-		castle = open(r"C:\Users\Owner\source\repos\whileImGone\whileImGone\Resources\Art\castle.txt")
-		rodnar = open(r"C:\Users\Owner\source\repos\whileImGone\whileImGone\Resources\Art\rodnar.txt")
+		intro1 = open(r"Resources\Text\introPt1.txt")
+		intro2 = open(r"Resources\Text\introPt2.txt")
+		castle = open(r"Resources\Art\castle.txt")
+		rodnar = open(r"Resources\Art\rodnar.txt")
 
-		winsound.PlaySound(r"C:\Users\Owner\source\repos\whileImGone\whileImGone\Resources\Sound\sound1.wav", winsound.SND_ASYNC)
+		winsound.PlaySound(r"Resources\Sound\sound1.wav", winsound.SND_ASYNC)
 
 		time.sleep(3)
 		View.slow_print_text(intro1.readlines())
 		View.slow_print_ascii(castle.readlines())
+		time.sleep(2)
 		View.slow_print_text(intro2.readlines())
+		time.sleep(1)
 		View.slow_print_ascii(rodnar.readlines())
 
 	def slow_print_text(text):
@@ -33,7 +35,4 @@ class View:
 			time.sleep(0.03)
 			for c in line:
 				print(c, end = "")
-		
-
-
 		
