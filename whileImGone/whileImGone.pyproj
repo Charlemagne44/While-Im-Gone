@@ -26,6 +26,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controller.py" />
+    <Compile Include="Place.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Player.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="World.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="View.py">
       <SubType>Code</SubType>
     </Compile>
@@ -37,6 +46,15 @@
     <Folder Include="Resources\Sound\" />
   </ItemGroup>
   <ItemGroup>
+    <Interpreter Include="env1\">
+      <Id>env1</Id>
+      <Version>0.0</Version>
+      <Description>env1 (Python 3.9 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
     <Interpreter Include="env\">
       <Id>env</Id>
       <Version>3.7</Version>
