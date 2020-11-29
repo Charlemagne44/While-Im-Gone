@@ -1,5 +1,10 @@
 import time
 import winsound
+from asciimatics.effects import Cycle, Stars
+from asciimatics.renderers import FigletText
+from asciimatics.scene import Scene
+from asciimatics.screen import Screen
+import random
 
 
 class View:
@@ -8,9 +13,9 @@ class View:
 		intro1 = open(r"Resources\Text\introPt1.txt")
 		intro2 = open(r"Resources\Text\introPt2.txt")
 		castle = open(r"Resources\Art\castle.txt")
-		rodnar = open(r"Resources\Art\rodnar.txt")
+		rodnar = open(r"Resources\Art\benton.txt")
 
-		winsound.PlaySound(r"Resources\Sound\sound1.wav", winsound.SND_ASYNC)
+		winsound.PlaySound(r"Resources\Sound\sound1.wav", winsound.SND_ASYNC) #take out loop
 
 		time.sleep(3)
 		View.slow_print_text(intro1.readlines())
@@ -20,6 +25,21 @@ class View:
 		time.sleep(1)
 		View.slow_print_ascii(rodnar.readlines())
 		time.sleep(1)
+
+	def demo(screen):
+		effects = [
+			Cycle(
+				screen,
+				FigletText("ASCIIMATICS", font='big'),
+				int(screen.height / 2 - 8)),
+			Cycle(
+				screen,
+				FigletText("ROCKS!", font='big'),
+				int(screen.height / 2 + 3)),
+			#Stars(screen, 200)
+		]
+		screen.play([Scene(effects, 500)])
+
 
 	def slow_print_text(text):
 		for line in text:

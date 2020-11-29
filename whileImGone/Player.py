@@ -9,4 +9,3 @@ class Player:
 		self.playerName = playerName
 		self.inventory = inventory
 		self.stats = stats
-

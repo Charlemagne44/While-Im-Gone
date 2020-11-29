@@ -26,6 +26,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controller.py" />
+    <Compile Include="Item.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Place.py">
       <SubType>Code</SubType>
     </Compile>

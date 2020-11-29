@@ -1,26 +1,33 @@
-
+from Item import *
 
 class World:
 
 	def __init__(self, player):
-		self.places = World.init_world(player)
-
-
-	def init_world(player):
-		world = {
-			"castle yard" : World.create_castle_yard(), 
-			"castle" : World.create_castle()}
-		return world
+		#self.world_objects = {}
 		
-	def create_castle_yard():
+		self.places =  {
+			"castle yard" : World.create_castle_yard(self), 
+			"castle" : World.create_castle(self)
+		}
+		
+		self.init_items(self.places)
+
+
+	def init_items(self, places):
+		self.letter = Item("letter", "An old letter with a wax seal and aged parchment")
+		self.sword = Item("iron sword", "A rusty broadsword with a artisian pommel stone")
+		self.places["castle yard"]["items"].append(self.sword)
+		self.places["castle yard"]["items"].append(self.letter)
+		
+	def create_castle_yard(self):
 		castleYard = {
 			"name" : "castle yard",
-			"items" : ["sword"],
-			"friends" : ["rodnar"],
+			"items" : [],
+			"friends" : ["benton"],
 			"visited" : False
 		}
 		return castleYard
-	def create_castle():
+	def create_castle(self):
 		castle = {
 			"name" : "castle",
 			"items" : [],
