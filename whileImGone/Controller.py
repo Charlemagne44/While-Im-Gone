@@ -19,16 +19,17 @@ class Controller:
 
 		#inventory testing
 		#print(m.world_object.places["castle yard"]["items"])
-		#m.pick_up_item(p, "letter")
+		m.pick_up_item(p, "letter", 't')
 		#print(m.world_object.places["castle yard"]["items"])
 		#print(m.player_object.inventory)
 
-		v.intro_to_game()
-		v.frog_theme()
+		#v.intro_to_game()
+		#v.frog_theme()
 		running = True
 		while(running):
 			v.display_choices(p)
 			choice = input("choice: ")
+			print('\n')
 			m.parse_choice(choice, p, m.world_object)
 
 			
