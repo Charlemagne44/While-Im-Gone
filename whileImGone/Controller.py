@@ -25,7 +25,12 @@ class Controller:
 
 		v.intro_to_game()
 		v.frog_theme()
-			
+		running = True
+		while(running):
+			v.display_choices(p)
+			choice = input("choice: ")
+			m.parse_choice(choice, p, m.world_object)
+
 			
 	
 	if __name__ == "__main__":

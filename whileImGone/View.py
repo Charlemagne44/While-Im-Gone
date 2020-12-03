@@ -40,6 +40,14 @@ class View:
 		]
 		screen.play([Scene(effects, 500)])
 
+	def display_choices(self, player):
+		i = 1
+		for option in player.options:
+			print(str(i) + ". " + option)
+			i += 1
+
+
+
 
 	def slow_print_text(text):
 		for line in text:
